@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_gradient"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <!-- TOP END ICONS -->
+        <ImageView
+            android:id="@+id/ivPic1"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/ic_launcher"
+            android:layout_marginEnd="@dimen/d20"
+            android:layout_marginTop="@dimen/d10"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:contentDescription="@string/app_name"
+            app:layout_constraintTop_toTopOf="@+id/ivPic1"
+            app:layout_constraintEnd_toEndOf="@+id/ivPic1"
+            app:layout_constraintCircle="@+id/ivPic1"
+            android:layout_marginEnd="@dimen/d20"
+            app:layout_constraintCircleAngle="45"
+            app:layout_constraintCircleRadius="50dp"
+            android:src="@drawable/ic_android_black_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- CENTER CARD CONTENT -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardCornerRadius="10dp"
+            android:layout_marginBottom="@dimen/d15"
+            app:layout_constraintWidth_percent="0.9"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/d20" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/d15" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_end="@dimen/d10" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="@dimen/d10" />
+
+                <!-- TOP -->
+
+                <TextView
+                    android:id="@+id/vTitle"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/tvBack"
+                    app:layout_constraintTop_toTopOf="@+id/guideline_top"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    android:text="@string/title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tvBack"
+                    android:text="@string/back"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/vTitle"
+                    app:layout_constraintTop_toTopOf="@+id/vTitle"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    android:textColor="@color/light_grey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:id="@+id/v1"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/light_grey"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@+id/vTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/vTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"/>
+
+                <!-- UNITS -->
+
+                <TextView
+                    android:id="@+id/lblUnitPrice"
+                    android:text="@string/unit_price"
+                    android:textSize="16sp"
+                    android:layout_marginTop="@dimen/d10"
+                    app:layout_constraintTop_toBottomOf="@+id/v1"
+                    app:layout_constraintStart_toStartOf="@+id/vTitle"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="@string/num_3000"
+                    android:textColor="@color/startColor"
+                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/d10"
+                    app:layout_constraintTop_toTopOf="@+id/lblUnitPrice"
+                    app:layout_constraintBottom_toBottomOf="@+id/lblUnitPrice"
+                    app:layout_constraintStart_toEndOf="@+id/lblUnitPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!-- AVAILABLE -->
+
+                <TextView
+                    android:id="@+id/lblAvStock"
+                    android:layout_marginTop="@dimen/d20"
+                    android:text="@string/available_stock"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/lblUnitPrice"
+                    app:layout_constraintStart_toStartOf="@+id/lblUnitPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!-- MAIN CONTENT -->
+
+                <com.perusudroid.customscroll.CustomView
+                    android:id="@+id/customView2"
+                    android:layout_width="170dp"
+                    android:layout_marginTop="@dimen/d10"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    android:background="@drawable/border_line_2"
+                    app:layout_constraintEnd_toStartOf="@+id/customView"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@+id/lblAvStock"
+                    app:myContent="@string/num_500"
+                    app:myTitle="@string/warehouse" />
+
+                <com.perusudroid.customscroll.CustomView
+                    android:id="@+id/customView"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_line"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toEndOf="@+id/customView2"
+                    app:layout_constraintTop_toTopOf="@+id/customView2"
+                    app:layout_constraintBottom_toBottomOf="@+id/customView2"
+                    app:myContent="@string/num_500"
+                    app:myTitle="@string/warehouse"  />
+
+
+                <com.perusudroid.customscroll.CustomView
+                    android:id="@+id/customView3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_line_2"
+                    app:layout_constraintEnd_toEndOf="@+id/customView2"
+                    
+                    app:layout_constraintStart_toStartOf="@+id/customView2"
+                    app:layout_constraintTop_toBottomOf="@+id/customView"
+                    app:myContent="@string/num_500"
+                    app:myTitle="@string/warehouse" />
+
+                <com.perusudroid.customscroll.CustomView
+                    android:id="@+id/customView4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_line"
+                    app:layout_constraintEnd_toEndOf="@+id/customView"
+                    
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="@+id/customView"
+                    app:layout_constraintTop_toTopOf="@+id/customView3"
+                    app:layout_constraintBottom_toBottomOf="@+id/customView3"
+                    app:myContent="@string/num_500"
+                    app:myTitle="@string/warehouse"  />
+
+
+
+                <com.perusudroid.customscroll.CustomView
+                    android:id="@+id/customView5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_line_2"
+                    
+                    app:layout_constraintStart_toStartOf="@+id/customView2"
+                    app:layout_constraintEnd_toEndOf="@+id/customView2"
+                    app:layout_constraintTop_toBottomOf="@+id/customView3"
+                    app:myContent="@string/num_500"
+                    app:myTitle="@string/warehouse" />
+
+                <com.perusudroid.customscroll.CustomView
+                    android:id="@+id/customView6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_line"
+                    app:layout_constraintEnd_toEndOf="@+id/customView"
+                    
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="@+id/customView"
+                    app:layout_constraintTop_toTopOf="@+id/customView5"
+                    app:layout_constraintBottom_toBottomOf="@+id/customView5"/>
+
+                <!-- QUANTITY -->
+
+                <TextView
+                    android:id="@+id/tvQty"
+                    android:layout_marginTop="@dimen/d10"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:text="@string/quantity"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    app:layout_constraintTop_toBottomOf="@+id/customView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <ImageView
+                    android:id="@+id/ivRemove"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintEnd_toStartOf="@+id/tvQty"
+                    app:layout_constraintTop_toBottomOf="@+id/tvQty"
+                    android:layout_marginEnd="@dimen/d10"
+                    android:src="@drawable/ic_remove_circle_orange_24dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"/>
+
+                <TextView
+                    android:id="@+id/tvCount"
+                    android:text="@string/_02"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/tvQty"
+                    app:layout_constraintEnd_toEndOf="@+id/tvQty"
+                    app:layout_constraintTop_toTopOf="@+id/ivRemove"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivRemove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <ImageView
+                    android:id="@+id/ivAdd"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintStart_toEndOf="@+id/tvQty"
+                    app:layout_constraintTop_toBottomOf="@+id/tvQty"
+                    android:src="@drawable/ic_add_circle_black_24dp"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"/>
+
+                <View
+                    android:id="@+id/v2"
+                    android:background="@color/light_grey"
+                    app:layout_constraintTop_toBottomOf="@+id/ivRemove"
+                    app:layout_constraintStart_toStartOf="@+id/guideline_start"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"/>
+
+                <!-- TOTAL PRICE -->
+
+                <TextView
+                    android:id="@+id/lblTotalPrice"
+                    android:text="@string/total_price"
+                    android:textSize="16sp"
+                    android:layout_marginTop="@dimen/d10"
+                    app:layout_constraintTop_toBottomOf="@+id/v2"
+                    app:layout_constraintStart_toStartOf="@+id/vTitle"
+                    app:layout_constraintBottom_toBottomOf="@+id/btnAdd"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="@string/num_3000"
+                    android:textColor="@color/startColor"
+                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/d10"
+                    app:layout_constraintTop_toTopOf="@+id/lblTotalPrice"
+                    app:layout_constraintBottom_toBottomOf="@+id/lblTotalPrice"
+                    app:layout_constraintStart_toEndOf="@+id/lblTotalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <Button
+                    android:id="@+id/btnAdd"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/d5"
+                    app:layout_constraintTop_toBottomOf="@+id/v2"
+                    app:layout_constraintBottom_toBottomOf="@+id/guideline_bottom"
+                    app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+                    android:background="@drawable/app_gradient"
+                    android:text="@string/add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

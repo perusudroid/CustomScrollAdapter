@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         etNumber.addTextChangedListener(object : TextWatcher{
             override fun afterTextChanged(s: Editable?) {
 
-                if(s?.length!! > 0 && s.length <2){
+                if(s?.trim()?.length!! > 0 && s.trim().length <2){
                     addLayout()
                 }
 
